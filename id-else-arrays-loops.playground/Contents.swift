@@ -315,9 +315,34 @@ for i in 0..<array14.count {
 
 /*
  1. Функция, примает массив и выводит массив элементов на нечётных индексах
+ [2,34,4,5] -> [34, 5]
+ 
  2. функция, возвращающая произведение элементов массива
+ [1,2,4] -> 8
  3. Функция, возврающая массив, состоящий из сумм пар соседних элементов
  [1,2,3,4] -> [3, 7]
  [1,2,30] -> [3,30]
- 
  */
+
+func idOdd(digit: Int) -> Bool {
+    return digit % 2 != 0
+}
+
+func oddIndexes(array: [Int]) -> [Int] {
+    var outputArray: [Int] = []
+    
+    for i in 0..<array.count {
+        print("индекс - \(i) элемент - \(array[i])")
+        
+        if isOdd(digit: i) {
+            outputArray.append(array[i])
+        }
+        
+    }
+    // чет сделаем
+    
+    return outputArray
+}
+
+let c = oddIndexes(array: [2,34,4,5])
+print("массив индексов с нечётными элементами - \(c)")
