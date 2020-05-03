@@ -165,3 +165,12 @@ let triangleInstance3 = Triangle1(aValue: 12, bValue: 12, abAngle: 45)
 let exists = triangleInstance1.isExists()
 let type = triangleInstance2.triangleType()
 
+/*
+ Упражнения
+ 
+ 1. Сделать структуру `прямоугольник` со свойствами длина и ширина. Написать методы вычисления периметра по площади
+ 2. К 1 задаче - написать метод, вычисляющий длину диагонали ( теорема пифагора )
+ 
+
+ 
+ */
