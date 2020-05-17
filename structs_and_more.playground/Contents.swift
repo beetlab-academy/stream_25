@@ -155,6 +155,10 @@ class Rect {
         width = widthValue
         height = heightValue
     }
+    
+    func perimeter() -> Double {
+        return 2 * (self.width + self.height)
+    }
 }
 
 // вызовы конструкторов
@@ -170,7 +174,146 @@ let type = triangleInstance2.triangleType()
  
  1. Сделать структуру `прямоугольник` со свойствами длина и ширина. Написать методы вычисления периметра по площади
  2. К 1 задаче - написать метод, вычисляющий длину диагонали ( теорема пифагора )
- 
-
- 
  */
+
+struct Rect12 {
+    /*stored property*/
+    let width: Double
+    let height: Double
+    
+    init(width: Double, heightValue: Double) {
+        self.width = width
+        height = heightValue
+    }
+    
+    func perimeter() -> Double {
+        let result = (width + height) * 2
+        return result
+    }
+    
+    func area() -> Double {
+        let result = width * height
+        return result
+    }
+    
+    /*вычисляемое свойство - computed property*/
+    
+    var description: String {
+        let resultString = "В прямоугольнике [\(width) \(height)] - периметр \(perimeter()) площадь - \(area())"
+        return resultString
+    }
+}
+
+let rect12Instance = Rect12(width: 12, heightValue: 11)
+let perimeter = rect12Instance.perimeter()
+let area = rect12Instance.area()
+
+print("периметер - \(perimeter) площадь - \(area)")
+print(rect12Instance.description)
+
+/*Задачка для пытливых*/
+
+/*
+ 
+ https://leetcode.com
+ 
+ 1. Гараж, состоит из этажей (массив этажей)
+ 2. На каждом этаже есть массив парковочных мест
+ 3. Написать метод у гаража, который паркует тачку. Тачка === строка, в которой номер тачки. Можно тачку сделать отдельной сущностью; метод возвращает структуру с 2 свойствами - номер этажа и номер парковочного места
+ 4. Написать метод, который возвращает номер тачки по структуре из п.3 - по номеру этажа и месту
+ 5. у парковочного места должно быть свойство String?, в котором лежит номер припарковоной тачки, если мето занято и nil, если оно свободно
+ 
+гараж - класс, этаж - тоже класс
+ в конструктор гаража надо пробросить массив этажей
+ 
+ struct ParkingTiket {
+    let level: Int
+    let placeId: Int
+ }
+ 
+ protocol Algorithm {
+    func park(garage: Garage, car: String) -> ParkingTiket?
+ }
+ */
+
+
+// Optional type
+
+var value: Int? // optional Int
+var value1: Int? = nil // nil = not initialized link
+
+value = 10
+
+func max(left: Int, right: Int) -> Int? {
+    if left > right {
+        return left
+    } else if right > left {
+        return right
+    } else {
+        return nil
+    }
+}
+
+let result123 = max(left: 12, right: 12)
+result123?.byteSwapped
+
+var human: Human? = Human(name: "", age: 0)
+
+
+///
+
+human?.age // добавляется вопрос если мы обращаемся к свойствам опциональной переменной
+
+let age = human?.age // Int?
+
+// приведение к типу - Int? к Int
+
+/* if - let */
+
+if let human = human {
+    // human - не nil
+  let x = human.age
+} else {
+    // human -> nil
+}
+
+/* guard let*/
+
+func isLegalAge(human: Human?) -> Bool {
+    // early return
+    guard let human = human else {
+        return false
+    }
+    
+    return human.age >= 18
+    
+    /*альтернатива*/
+    
+    //    if let human = human {
+    //        return human.age >= 18
+    //    } else {
+    //        return false
+    //    }
+}
+
+
+// bonus track - как не писать конструктор
+
+struct A {
+    var a: Int?
+    var b: Int?
+}
+ 
+var aInstance = A()
+aInstance.a = 12
+aInstance.b = 13
+
+struct Aa {
+    var a = 0
+    var b = 0
+}
+
+var aaInstance = Aa()
+aaInstance.a = 12
+aaInstance.b = 13
+
