@@ -18,6 +18,8 @@ struct User: Codable {
     let age: Int
 }
 
+extension
+
 do {
     let user = User(name: "владимир", age: 64)
     let data = try JSONEncoder().encode(user)
