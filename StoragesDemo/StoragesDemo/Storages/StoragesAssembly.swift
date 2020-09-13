@@ -16,4 +16,8 @@ class StoragesAssembly {
     var userDefaults: Storage {
         return UserDefaultsStorage()
     }
+    
+    var persistantStorage: DataStorage {
+        return UserDefaultsDataStorage()
+    }
 }

@@ -11,10 +11,9 @@ import Foundation
 class GarageAssembly {
     let storagesAssembly = StoragesAssembly()
     
-    func garage(with floors: [Floor]) -> Garage {
+    var garage: Garage {
         let garage = Garage()
-        garage.floors = floors // инъекция зависимость в свойство
-        garage.storage = storagesAssembly.userDefaults // инъекция зависимости в свойство
+        garage.storage = storagesAssembly.persistantStorage // инъекция зависимости в свойство
         return garage
     }
 }

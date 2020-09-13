@@ -14,6 +14,8 @@
 		1193200D2504FB97006D00AB /* StoragesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1193200C2504FB97006D00AB /* StoragesAssembly.swift */; };
 		1193201025050313006D00AB /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1193200F25050313006D00AB /* Garage.swift */; };
 		11932012250504C1006D00AB /* GarageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11932011250504C1006D00AB /* GarageAssembly.swift */; };
+		11932015250E2CAA006D00AB /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11932014250E2CAA006D00AB /* DataStorage.swift */; };
+		11932017250E2D3A006D00AB /* UserDefaultsDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11932016250E2D3A006D00AB /* UserDefaultsDataStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +39,8 @@
 		1193200C2504FB97006D00AB /* StoragesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoragesAssembly.swift; sourceTree = "<group>"; };
 		1193200F25050313006D00AB /* Garage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Garage.swift; sourceTree = "<group>"; };
 		11932011250504C1006D00AB /* GarageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageAssembly.swift; sourceTree = "<group>"; };
+		11932014250E2CAA006D00AB /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
+		11932016250E2D3A006D00AB /* UserDefaultsDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 		11931FFD2504FA2E006D00AB /* StoragesDemo */ = {
 			isa = PBXGroup;
 			children = (
+				11932013250E2C9B006D00AB /* DataStorage */,
 				1193200E25050306006D00AB /* Garage */,
 				119320052504FAD4006D00AB /* Storages */,
 				11931FFE2504FA2E006D00AB /* main.swift */,
@@ -79,10 +84,9 @@
 		119320052504FAD4006D00AB /* Storages */ = {
 			isa = PBXGroup;
 			children = (
+				11932019250E2E22006D00AB /* Storage */,
+				11932018250E2E1A006D00AB /* DataStorage */,
 				1193200C2504FB97006D00AB /* StoragesAssembly.swift */,
-				119320062504FADE006D00AB /* Storage.swift */,
-				119320082504FB02006D00AB /* InMemoryStorage.swift */,
-				1193200A2504FB57006D00AB /* UserDefaultsStorage.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -96,6 +100,32 @@
 			path = Garage;
 			sourceTree = "<group>";
 		};
+		11932013250E2C9B006D00AB /* DataStorage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataStorage;
+			sourceTree = "<group>";
+		};
+		11932018250E2E1A006D00AB /* DataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				11932016250E2D3A006D00AB /* UserDefaultsDataStorage.swift */,
+				11932014250E2CAA006D00AB /* DataStorage.swift */,
+			);
+			path = DataStorage;
+			sourceTree = "<group>";
+		};
+		11932019250E2E22006D00AB /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				119320062504FADE006D00AB /* Storage.swift */,
+				119320082504FB02006D00AB /* InMemoryStorage.swift */,
+				1193200A2504FB57006D00AB /* UserDefaultsStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +136,7 @@
 				11931FF72504FA2E006D00AB /* Sources */,
 				11931FF82504FA2E006D00AB /* Frameworks */,
 				11931FF92504FA2E006D00AB /* CopyFiles */,
+				11FC3143250E3D5A009F7501 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -149,6 +180,26 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11FC3143250E3D5A009F7501 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		11931FF72504FA2E006D00AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -156,7 +207,9 @@
 			files = (
 				1193200B2504FB57006D00AB /* UserDefaultsStorage.swift in Sources */,
 				1193200D2504FB97006D00AB /* StoragesAssembly.swift in Sources */,
+				11932017250E2D3A006D00AB /* UserDefaultsDataStorage.swift in Sources */,
 				1193201025050313006D00AB /* Garage.swift in Sources */,
+				11932015250E2CAA006D00AB /* DataStorage.swift in Sources */,
 				119320092504FB02006D00AB /* InMemoryStorage.swift in Sources */,
 				11931FFF2504FA2E006D00AB /* main.swift in Sources */,
 				119320072504FADE006D00AB /* Storage.swift in Sources */,
